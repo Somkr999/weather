@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>knoWeather</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <!-- Simple heading with weather emoji -->
+            <span class="navbar-brand mb-0 h1">🌤️ knoWeather</span>
+            
+            <!-- Search form -->
+            <form class="d-flex" id="searchForm">
+                <input class="form-control me-2" type="search" placeholder="Enter city name" id="cityInput">
+                <button class="btn btn-light" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Main content container -->
+    <div class="container mt-4">
+        
+        <!-- Current weather display section -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <!-- Loading message (initially hidden) -->
+                <div id="loading" class="text-center d-none">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Getting weather data...</p>
+                </div>
+
+                <!-- Current weather card -->
+                <div id="currentWeather" class="card shadow-lg current-weather-card d-none">
+                    <div class="card-body text-center">
+                        <!-- Location and date -->
+                        <h2 id="location" class="card-title"></h2>
+                        <p id="date" class="text-muted"></p>
+                        
+                        <!-- Weather icon and temperature -->
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <img id="weatherIcon" src="" alt="Weather" class="weather-icon">
+                                <p id="description" class="fs-5 text-capitalize"></p>
+                            </div>
+                            <div class="col-md-6">
+                                <h1 id="temperature" class="display-1 fw-bold text-primary"></h1>
+                                <p id="feelsLike" class="text-muted"></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional weather info -->
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <strong>Humidity</strong><br>
+                                <span id="humidity"></span>
+                            </div>
+                            <div class="col-4">
+                                <strong>Wind</strong><br>
+                                <span id="wind"></span>
+                            </div>
+                            <div class="col-4">
+                                <strong>UV Index</strong><br>
+                                <span id="uv"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7-day forecast section -->
+        <div class="row">
+            <div class="col-12">
+                <h3 class="mb-3">7-Day Forecast</h3>
+                <!-- Forecast cards container -->
+                <div id="forecast" class="row g-3 d-none">
+                    <!-- Forecast cards will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Error message (initially hidden) -->
+        <div id="error" class="alert alert-danger d-none" role="alert">
+            <strong>Oops!</strong> <span id="errorMessage"></span>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script3.js"></script>
+</body>
+
+</html>

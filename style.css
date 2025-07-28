@@ -1,0 +1,93 @@
+/* Custom styles for weather app */
+
+body {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Current weather card animations */
+.current-weather-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.current-weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Weather icon styling */
+.weather-icon {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.weather-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Forecast card styling */
+.forecast-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.forecast-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Forecast icon */
+.forecast-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.2s ease;
+}
+
+.forecast-card:hover .forecast-icon {
+    transform: scale(1.1);
+}
+
+/* Loading spinner custom color */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Fade in animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .weather-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .display-1 {
+        font-size: 3rem;
+    }
+}
